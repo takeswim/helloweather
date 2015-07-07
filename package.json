@@ -1,0 +1,16 @@
+{
+    "name"      : "hello-weather",
+    "version"   : "0.0.1",
+    "private"   : true,
+    "license"   : "MIT",
+    "scripts"   : {
+        "start" : "node app.js"
+    },
+    "dependencies": {
+        "express"       : "latest",
+        "errorhandler"  : "latest",
+        "ngeohash"      : "latest",
+        "superagent"    : "latest",
+        "redis"         : "latest"
+    }
+}
