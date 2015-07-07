@@ -14,7 +14,6 @@ if ('development' == env) {
 app.set('port', 8080);
 
 // route
-var matching = {};
 app.get('/weather/:lat/:lon', function(req, res, next) {
    var ghash = geohash.encode(parseFloat(req.params.lat), parseFloat(req.params.lon));
    var ghash_6 = "helloweather::"+ghash.substr(0,6);
@@ -27,7 +26,7 @@ app.get('/weather/:lat/:lon', function(req, res, next) {
                    var result_json = JSON.stringify(result.body);
                    redis.setex(ghash_6, 60, result_json);
                    console.log('##set 60sec '+result_json);
-                   res.end(res_str);
+                   res.end(result_json);
                });
        } else {
            console.log('##cached');
