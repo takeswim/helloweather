@@ -2,4 +2,4 @@
 ##usage
 GET /weather/:lat/:lon
 
-result {}
+result {stat:1}
